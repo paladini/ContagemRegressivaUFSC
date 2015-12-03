@@ -4,16 +4,22 @@ function daysInMonth(month,year) {
 
 function calculate_remaining_days() {
 	var testDate = new Date(2015, 11, 12);
-
 	var today = new Date();
+	var remaining_days = 0;
 	var remaining_months = (testDate.getMonth()+1) - (today.getMonth()+1);
 
-	var remaining_days = (daysInMonth(today.getMonth()+1, today.getFullYear()) - today.getDate());
-	for(var i = 1; i <= remaining_months; i++) {
-		if (i == remaining_months) {
-			remaining_days += testDate.getDate();
-		} else {
-			remaining_days += daysInMonth((testDate.getMonth()+1)+i);
+	if (remaining_months == 0) { // if testDate.month() == today.getMonth()
+		if (testDate.getDate() > today.getDate()) {
+			remaining_days = testDate.getDate() - today.getDate();
+		}
+	} else {
+		remaining_days = (daysInMonth(today.getMonth()+1, today.getFullYear()) - today.getDate());
+		for(var i = 1; i <= remaining_months; i++) {
+			if (i == remaining_months) {
+				remaining_days += testDate.getDate();
+			} else {
+				remaining_days += daysInMonth((testDate.getMonth()+1)+i);
+			}
 		}
 	}
 
