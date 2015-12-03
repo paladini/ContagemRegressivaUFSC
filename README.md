@@ -3,6 +3,8 @@ Contagem Regressiva UFSC 0.1
 
 Extensão para o Chrome que exibe a contagem regressiva de dias para o Vestibular UFSC 2016 - apenas uma pequena ferramenta para os vestibulandos da UFSC 2016. 
 
+* [Download para Google Chrome](https://chrome.google.com/webstore/detail/baacpolgnpcgpecpombpeoeljalccnld)
+
 Boa prova!
 
 Sobre e Colaboração
