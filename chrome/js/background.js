@@ -3,7 +3,7 @@ function daysInMonth(month,year) {
 }
 
 function calculate_remaining_days() {
-	var testDate = new Date(2015, 11, 12);
+	var testDate = new Date(2016, 09, 12);
 	var today = new Date();
 	var remaining_days = 0;
 	var remaining_months = (testDate.getMonth()+1) - (today.getMonth()+1);
@@ -32,7 +32,7 @@ function onAlarm(alarm) {
 	var remaining_days = calculate_remaining_days();
 	chrome.browserAction.setBadgeBackgroundColor({color: "#CC0000"});
 	chrome.browserAction.setBadgeText({text: remaining_days.toString() });
-	chrome.browserAction.setTitle({title: "Faltam " + remaining_days + " dias para o Vestibular UFSC 2016."});
+	chrome.browserAction.setTitle({title: "Faltam " + remaining_days + " dias para o Vestibular UFSC 2017."});
 
 	// Calculating tomorrow
 	var tomorrow = new Date();
@@ -49,7 +49,7 @@ chrome.alarms.onAlarm.addListener(onAlarm);
 
 // Opening webpage when clicking in the extension button.
 chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.create({'url': "http://vestibular2016.ufsc.br"});
+  chrome.tabs.create({'url': "http://vestibular2017.ufsc.br"});
 });
 
 // Call the method
