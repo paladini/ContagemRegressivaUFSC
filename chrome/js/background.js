@@ -7,7 +7,6 @@ function calculate_remaining_days() {
 	var today = new Date();
 	var remaining_days = 0;
 	var remaining_months = (testDate.getMonth()+1) - (today.getMonth()+1);
-
 	if (remaining_months == 0) { // if testDate.month() == today.getMonth()
 		if (testDate.getDate() > today.getDate()) {
 			remaining_days = testDate.getDate() - today.getDate();
@@ -18,11 +17,10 @@ function calculate_remaining_days() {
 			if (i == remaining_months) {
 				remaining_days += testDate.getDate();
 			} else {
-				remaining_days += daysInMonth((testDate.getMonth()+1)+i);
+				remaining_days += daysInMonth((testDate.getMonth()+1), testDate.getFullYear());
 			}
 		}
 	}
-
 	return remaining_days;
 }
 
@@ -41,7 +39,7 @@ function onAlarm(alarm) {
 	tomorrow.setMinutes(1);
 	tomorrow.setSeconds(0);
 	tomorrow.setMilliseconds(0);
-	chrome.alarms.create("next_alarm", { when: parseFloat(tomorrow.toString()) });
+	chrome.alarms.create("next_alarm", { when: tomorrow.getTime() });
 }
 
 // Trigger the alarm.

@@ -1,6 +1,6 @@
 {
 	"name": "Contagem Regressiva UFSC",
-	"version": "0.3",
+	"version": "0.3.1",
 	"permissions": [
 		"activeTab"
 	],
