@@ -1,13 +1,14 @@
 {
 	"name": "Contagem Regressiva UFSC",
-	"version": "0.3.1",
+	"version": "0.4.0",
 	"permissions": [
-		"activeTab"
+		"alarms",
+		"tabs"
 	],
 	"background": {
-		"page": "background.html"
+		"service_worker": "js/background.js"
 	},
-	"browser_action": {
+	"action": {
 		"default_icon": "images/icon128.png",
 		"default_title": "Contagem Regressiva UFSC"
 	},
@@ -16,10 +17,5 @@
 		"48": "images/icon48.png",
 		"128": "images/icon128.png"
 	},
-	"manifest_version": 2,
-	"permissions": [
-		"alarms",
-		"tabs",
-		"http://*/*"
-	]
+	"manifest_version": 3
 }

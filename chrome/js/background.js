@@ -28,9 +28,9 @@ function calculate_remaining_days() {
 function onAlarm(alarm) {
 
 	var remaining_days = calculate_remaining_days();
-	chrome.browserAction.setBadgeBackgroundColor({color: "#CC0000"});
-	chrome.browserAction.setBadgeText({text: remaining_days.toString() });
-	chrome.browserAction.setTitle({title: "Faltam " + remaining_days + " dias para o Vestibular UFSC 2017."});
+	chrome.action.setBadgeBackgroundColor({color: "#CC0000"});
+	chrome.action.setBadgeText({text: remaining_days.toString() });
+	chrome.action.setTitle({title: "Faltam " + remaining_days + " dias para o Vestibular UFSC 2017."});
 
 	// Calculating tomorrow
 	var tomorrow = new Date();
@@ -46,8 +46,8 @@ function onAlarm(alarm) {
 chrome.alarms.onAlarm.addListener(onAlarm);
 
 // Opening webpage when clicking in the extension button.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.create({'url': "http://vestibular2017.ufsc.br"});
+chrome.action.onClicked.addListener(function(tab) {
+	chrome.tabs.create({'url': "https://vestibular2017.ufsc.br"});
 });
 
 // Call the method
